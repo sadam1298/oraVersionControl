@@ -16,9 +16,10 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
-            lblLastName.Text = Resource1.LastName;
-            lblFirstName.Text = Resource1.FirstName;
+            lblLastName.Text = Resource1.FullName;
             btnAdd.Text = Resource1.Add;
+            btnFile.Text = Resource1.File;
+            btnDelete.Text = Resource1.Delete;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -29,10 +30,24 @@ namespace UserMaintenance
         {
             var u = new User()
             {
-                LastName = txtLastName.Text,
-                FirstName = txtFirstName.Text
+                FullName = txtFullName.Text,
             };
             users.Add(u);
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            save.FilterIndex = 2;
+            save.RestoreDirectory = true;
+            save.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var delete = listUsers.SelectedItem;
+            if (delete != null) users.Remove((User)delete);
         }
     }
 }
