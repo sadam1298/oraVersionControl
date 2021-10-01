@@ -33,6 +33,7 @@ namespace UserMaintenance
             this.listUsers = new System.Windows.Forms.ListBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLastName
@@ -54,14 +55,14 @@ namespace UserMaintenance
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(271, 13);
+            this.txtFullName.Location = new System.Drawing.Point(233, 29);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(139, 20);
+            this.txtFullName.Size = new System.Drawing.Size(178, 20);
             this.txtFullName.TabIndex = 3;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(233, 81);
+            this.btnAdd.Location = new System.Drawing.Point(233, 55);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(177, 29);
             this.btnAdd.TabIndex = 5;
@@ -69,11 +70,22 @@ namespace UserMaintenance
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnFile
+            // 
+            this.btnFile.Location = new System.Drawing.Point(233, 259);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(177, 29);
+            this.btnFile.TabIndex = 6;
+            this.btnFile.Text = "button1";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 300);
+            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.listUsers);
@@ -91,6 +103,7 @@ namespace UserMaintenance
         private System.Windows.Forms.ListBox listUsers;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnFile;
     }
 }
 

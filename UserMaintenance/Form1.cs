@@ -18,6 +18,7 @@ namespace UserMaintenance
             InitializeComponent();
             lblLastName.Text = Resource1.FullName;
             btnAdd.Text = Resource1.Add;
+            btnFile.Text = Resource1.File;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -31,6 +32,14 @@ namespace UserMaintenance
                 FullName = txtFullName.Text,
             };
             users.Add(u);
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFile.FilterIndex = 2;            
+            saveFile.ShowDialog();
         }
     }
 }
