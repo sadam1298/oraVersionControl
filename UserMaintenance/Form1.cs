@@ -36,10 +36,11 @@ namespace UserMaintenance
 
         private void btnFile_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFile.FilterIndex = 2;            
-            saveFile.ShowDialog();
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            save.FilterIndex = 2;
+            save.RestoreDirectory = true;
+            save.ShowDialog();
         }
     }
 }

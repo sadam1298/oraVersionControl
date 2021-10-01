@@ -57,7 +57,7 @@ namespace UserMaintenance
             // 
             this.txtFullName.Location = new System.Drawing.Point(233, 29);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(178, 20);
+            this.txtFullName.Size = new System.Drawing.Size(177, 20);
             this.txtFullName.TabIndex = 3;
             // 
             // btnAdd
@@ -72,7 +72,7 @@ namespace UserMaintenance
             // 
             // btnFile
             // 
-            this.btnFile.Location = new System.Drawing.Point(233, 259);
+            this.btnFile.Location = new System.Drawing.Point(233, 261);
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size(177, 29);
             this.btnFile.TabIndex = 6;
