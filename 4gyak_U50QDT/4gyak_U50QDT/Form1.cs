@@ -12,9 +12,16 @@ namespace _4gyak_U50QDT
 {
     public partial class Form1 : Form
     {
+        List<Flat> flats;
+        RealEstateEntities context = new RealEstateEntities();
+        void LoadData()
+        {
+            flats = context.Flats.ToList();
+        }
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
     }
 }
