@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,13 @@ namespace week5
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio;
+        List<decimal> Nyereségek = new List<decimal>();
         public Form1()
         {
             InitializeComponent();
             Ticks = context.Ticks.ToList();
             dataGridView1.DataSource = Ticks;
-            CreatePortfolio();
-            //GetPortfolioValue();
-            List<decimal> Nyereségek = new List<decimal>();
+            CreatePortfolio();       
             int intervalum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -41,7 +41,7 @@ namespace week5
                                         .ToList();
             MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count() / 5].ToString());
         }
-        void CreatePortfolio() 
+        void CreatePortfolio()
         {
             Portfolio.Add(new PortfolioItem() { Index = "OTP", Volume = 10 });
             Portfolio.Add(new PortfolioItem() { Index = "ZWACK", Volume = 10 });
@@ -62,6 +62,27 @@ namespace week5
                 value += (decimal)last.Price * item.Volume;
             }
             return value;
+        }
+        private void Save()
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sf.FileName)) 
+                {
+                    sw.WriteLine("Időszak\tNyereség");
+                    for (int i = 0; i < Nyereségek.Count; i++)
+                    {
+                        sw.WriteLine((i + 1).ToString() + "\t" + Nyereségek[i]);
+                    }
+                }
+            }
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
 }
