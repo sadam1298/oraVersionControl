@@ -15,7 +15,7 @@ namespace week5
     {
         PortfolioEntities2 context = new PortfolioEntities2();
         List<Tick> Ticks;
-        List<PortfolioItem> Portfolio;
+        List<PortfolioItem> Portfolio = new List<PortfolioItem>();
         List<decimal> Nyereségek = new List<decimal>();
         public Form1()
         {
