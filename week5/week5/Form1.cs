@@ -13,7 +13,7 @@ namespace week5
 {
     public partial class Form1 : Form
     {
-        PortfolioEntities context = new PortfolioEntities();
+        PortfolioEntities2 context = new PortfolioEntities2();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio;
         List<decimal> Nyereségek = new List<decimal>();
