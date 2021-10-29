@@ -12,7 +12,8 @@ using System.Windows.Forms;
 namespace MNBArfolyam
 {
     public partial class Form1 : Form
-    {         
+    {
+        BindingList<Entities.RateData> Rates = new BindingList<Entities.RateData>();
         public Form1()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
@@ -29,6 +30,8 @@ namespace MNBArfolyam
             var result = response.GetExchangeRatesResult;
 
             InitializeComponent();
+            //DataGridView RatesDataGridView = new DataGridView();
+            RatesDataGridView.DataSource = Rates;
         }
     }
 }
