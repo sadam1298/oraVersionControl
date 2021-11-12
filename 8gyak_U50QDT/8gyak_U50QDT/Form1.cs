@@ -73,7 +73,10 @@ namespace _8gyak_U50QDT
 
         private void buttonBall_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory()
+            {
+                BallColor = buttonColor.BackColor
+            };
         }
 
         private void buttonColor_Click(object sender, EventArgs e)
