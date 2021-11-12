@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace _8gyak_U50QDT.Entities
 {
-    public class Toy : Abstractions.Toy
+    public class Ball : Toy
     {
         protected override void DrawImage(Graphics g)
         {

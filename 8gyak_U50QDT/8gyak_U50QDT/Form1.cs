@@ -1,4 +1,5 @@
-﻿using _8gyak_U50QDT.Entities;
+﻿using _8gyak_U50QDT.Abstractions;
+using _8gyak_U50QDT.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,15 @@ namespace _8gyak_U50QDT
     {
         private List<Toy> _toys = new List<Toy>();
         private IToyFactory _factory;
+        private Toy _nextToy;
         public IToyFactory Factory 
         {
             get { return _factory; }
-            set { _factory = value; }
+            set 
+                {
+                _factory = value;
+                DisplayNext();
+                }
         }
         public Form1()
         {
@@ -50,6 +56,25 @@ namespace _8gyak_U50QDT
                 mainPanel.Controls.Remove(oldestBall);
                 _toys.Remove(oldestBall);
             }
+        }
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+                Controls.Remove(_nextToy);
+            _nextToy = (Toy)Factory.CreateNew();
+            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Left = lblNext.Left;
+            Controls.Add(_nextToy);
+        }
+
+        private void buttonCar_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void buttonBall_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
         }
     }
 }
