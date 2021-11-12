@@ -29,7 +29,6 @@ namespace _8gyak_U50QDT
         public Form1()
         {
             InitializeComponent();
-            Factory = new IToyFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
