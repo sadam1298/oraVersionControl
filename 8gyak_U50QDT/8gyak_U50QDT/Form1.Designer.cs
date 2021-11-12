@@ -37,11 +37,17 @@ namespace _8gyak_U50QDT
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             this.buttonColor = new System.Windows.Forms.Button();
+            this.buttonPresent = new System.Windows.Forms.Button();
+            this.btnPresentBox = new System.Windows.Forms.Button();
+            this.btnPresentRibbon = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.btnPresentRibbon);
+            this.mainPanel.Controls.Add(this.btnPresentBox);
+            this.mainPanel.Controls.Add(this.buttonPresent);
             this.mainPanel.Controls.Add(this.buttonColor);
             this.mainPanel.Controls.Add(this.lblNext);
             this.mainPanel.Controls.Add(this.buttonBall);
@@ -54,7 +60,7 @@ namespace _8gyak_U50QDT
             // lblNext
             // 
             this.lblNext.AutoSize = true;
-            this.lblNext.Location = new System.Drawing.Point(339, 46);
+            this.lblNext.Location = new System.Drawing.Point(287, 63);
             this.lblNext.Name = "lblNext";
             this.lblNext.Size = new System.Drawing.Size(68, 13);
             this.lblNext.TabIndex = 2;
@@ -62,7 +68,7 @@ namespace _8gyak_U50QDT
             // 
             // buttonBall
             // 
-            this.buttonBall.Location = new System.Drawing.Point(226, 41);
+            this.buttonBall.Location = new System.Drawing.Point(87, 53);
             this.buttonBall.Name = "buttonBall";
             this.buttonBall.Size = new System.Drawing.Size(75, 23);
             this.buttonBall.TabIndex = 1;
@@ -72,7 +78,7 @@ namespace _8gyak_U50QDT
             // 
             // buttonCar
             // 
-            this.buttonCar.Location = new System.Drawing.Point(130, 41);
+            this.buttonCar.Location = new System.Drawing.Point(6, 53);
             this.buttonCar.Name = "buttonCar";
             this.buttonCar.Size = new System.Drawing.Size(75, 23);
             this.buttonCar.TabIndex = 0;
@@ -95,12 +101,42 @@ namespace _8gyak_U50QDT
             // buttonColor
             // 
             this.buttonColor.BackColor = System.Drawing.Color.Fuchsia;
-            this.buttonColor.Location = new System.Drawing.Point(226, 71);
+            this.buttonColor.Location = new System.Drawing.Point(87, 83);
             this.buttonColor.Name = "buttonColor";
             this.buttonColor.Size = new System.Drawing.Size(75, 23);
             this.buttonColor.TabIndex = 3;
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            // 
+            // buttonPresent
+            // 
+            this.buttonPresent.Location = new System.Drawing.Point(168, 53);
+            this.buttonPresent.Name = "buttonPresent";
+            this.buttonPresent.Size = new System.Drawing.Size(75, 23);
+            this.buttonPresent.TabIndex = 4;
+            this.buttonPresent.Text = "PRESENT";
+            this.buttonPresent.UseVisualStyleBackColor = true;
+            this.buttonPresent.Click += new System.EventHandler(this.buttonPresent_Click);
+            // 
+            // btnPresentBox
+            // 
+            this.btnPresentBox.BackColor = System.Drawing.Color.Fuchsia;
+            this.btnPresentBox.Location = new System.Drawing.Point(168, 83);
+            this.btnPresentBox.Name = "btnPresentBox";
+            this.btnPresentBox.Size = new System.Drawing.Size(75, 23);
+            this.btnPresentBox.TabIndex = 5;
+            this.btnPresentBox.UseVisualStyleBackColor = false;
+            this.btnPresentBox.Click += new System.EventHandler(this.buttonColor_Click);
+            // 
+            // btnPresentRibbon
+            // 
+            this.btnPresentRibbon.BackColor = System.Drawing.Color.White;
+            this.btnPresentRibbon.Location = new System.Drawing.Point(168, 112);
+            this.btnPresentRibbon.Name = "btnPresentRibbon";
+            this.btnPresentRibbon.Size = new System.Drawing.Size(75, 23);
+            this.btnPresentRibbon.TabIndex = 6;
+            this.btnPresentRibbon.UseVisualStyleBackColor = false;
+            this.btnPresentRibbon.Click += new System.EventHandler(this.buttonColor_Click);
             // 
             // Form1
             // 
@@ -125,6 +161,9 @@ namespace _8gyak_U50QDT
         private System.Windows.Forms.Button buttonBall;
         private System.Windows.Forms.Button buttonCar;
         private System.Windows.Forms.Button buttonColor;
+        private System.Windows.Forms.Button btnPresentRibbon;
+        private System.Windows.Forms.Button btnPresentBox;
+        private System.Windows.Forms.Button buttonPresent;
     }
 }
 

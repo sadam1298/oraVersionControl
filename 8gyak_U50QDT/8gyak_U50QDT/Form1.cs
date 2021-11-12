@@ -89,5 +89,24 @@ namespace _8gyak_U50QDT
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+        private void btnPresentBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPresentRibbon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPresent_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory()
+            {
+                szalag = btnPresentRibbon.BackColor,
+                doboz = btnPresentBox.BackColor
+            };
+        }
     }
 }
