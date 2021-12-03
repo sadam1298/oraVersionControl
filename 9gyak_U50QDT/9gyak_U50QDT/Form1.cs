@@ -66,7 +66,7 @@ namespace _9gyak_U50QDT
 
             return birthprob;
         }
-        public List<Person> GetDeathProbabilities(string csvpath)
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
             List<DeathProbability> deathprob = new List<DeathProbability>();
 
