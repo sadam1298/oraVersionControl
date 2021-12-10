@@ -21,6 +21,8 @@ namespace _10gyak_U50QDT
 
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
+            gc.AddPlayer();
+            gc.Start(true);
         }
     }
 }
