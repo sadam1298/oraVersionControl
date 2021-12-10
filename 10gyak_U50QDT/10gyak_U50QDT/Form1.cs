@@ -19,6 +19,7 @@ namespace _10gyak_U50QDT
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
+        Brain winnerBrain = null;
         public Form1()
         {
             InitializeComponent();
@@ -61,6 +62,15 @@ namespace _10gyak_U50QDT
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
         }
     }
 }
