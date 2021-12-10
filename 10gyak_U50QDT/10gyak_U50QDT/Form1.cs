@@ -25,7 +25,7 @@ namespace _10gyak_U50QDT
             InitializeComponent();
 
             ga = gc.ActivateDisplay();
-            Controls.Add(ga);            
+            Controls.Add(ga);        
 
             gc.GameOver += Gc_GameOver;
 
